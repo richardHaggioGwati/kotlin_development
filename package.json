@@ -13,7 +13,7 @@
 		"tailwindcss"
 	],
 	"homepage": "",
-	"repository": "",
+	"repository": "https://github.com/richardHaggioGwati/gizo_dashboard",
 	"author": "Richard G.",
 	"type": "module",
 	"scripts": {

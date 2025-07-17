@@ -238,3 +238,91 @@ fun main() {
     println(number is String) // Output: false
 }
 ```
+
+### Logical Operators
+
+Kotlin provides logical operators to perform logical operations on Boolean values. These operators include:
+
+- `&&`: Logical AND
+- `||`: Logical OR
+- `!`: Logical NOT
+
+Simple enough...
+
+## Null Safety
+
+Kotlin has built-in null safety features to help prevent null pointer exceptions, which are a common source of runtime errors in many programming languages. In Kotlin, you can declare a variable as nullable by appending a question mark (`?`) to its type. This indicates that the variable can hold either a value of the specified type or `null`.
+
+### Nullable Types
+
+To declare a nullable type in Kotlin, you append a question mark (`?`) to the type name. For example, `String?` is a nullable string type that can hold either a string value or `null`.
+
+```kotlin
+fun main() {
+    var nullableString: String? = null // Nullable string
+    nullableString = "Hello, Kotlin!"
+
+    if (nullableString != null) {
+        println(nullableString.length) // Safe to access length
+    } else {
+        println("String is null")
+    }
+}
+```
+
+### Safe Calls and the Elvis Operator
+
+Kotlin provides safe calls (`?.`) and the Elvis operator (`?:`) to handle nullable types safely. The safe call operator allows you to call methods or access properties on a nullable object without risking a null pointer exception. If the object is `null`, the expression evaluates to `null` instead of throwing an exception.
+
+The Elvis operator provides a default value if the expression on the left is `null`.
+
+```kotlin
+fun main() {
+    var nullableString: String? = null
+
+    // Safe call
+    val length = nullableString?.length ?: 0 // If nullableString is null, length will be 0
+    println("Length: $length") // Output: Length: 0
+
+    nullableString = "Hello, Kotlin!"
+    val safeLength = nullableString?.length ?: 0 // Now it will return the length of the string
+    println("Safe Length: $safeLength") // Output: Safe Length: 15
+}
+```
+
+### Non-Null Assertion
+
+If you are certain that a nullable variable is not `null`, you can use the non-null assertion operator (`!!`) to assert that it is not `null`. However, be cautious when using this operator, as it will throw a `NullPointerException` if the variable is indeed `null`.
+
+```kotlin
+fun main() {
+    var nullableString: String? = "Hello, Kotlin!"
+
+    // Non-null assertion
+    val length = nullableString!!.length // This will not throw an exception
+    println("Length: $length") // Output: Length: 15
+
+    nullableString = null
+    // Uncommenting the line below will throw a NullPointerException
+    // val unsafeLength = nullableString!!.length // This will throw an exception
+}
+```
+
+## Functions
+
+In Kotlin, functions are first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned from other functions. Functions can be defined using the `fun` keyword. Here's a simple example of a function that takes two parameters and returns their sum:
+
+```kotlin
+fun add(a: Int, b: Int): Int {
+    return a + b
+}
+
+fun main() {
+    val result = add(5, 10)
+    println("Sum: $result") // Output: Sum: 15
+}
+```
+
+### Function Parameters and Return Types
+
+Kotlin allows you to define functions with parameters and specify their types. You can also define the return type of a function using a colon (`:`) followed by the type. If a function does not return a value, you can use `Unit` as the return type, which is similar to `void` in Java.

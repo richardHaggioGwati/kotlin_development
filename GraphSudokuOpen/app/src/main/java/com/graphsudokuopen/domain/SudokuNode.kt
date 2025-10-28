@@ -22,6 +22,9 @@ data class SudokuNode(
     }
 }
 
+/**
+ * Generate unique identifier
+ * */
 internal fun getHash(x: Int, y: Int): Int {
 val newX = x*100
     return "$newX$y".toInt()

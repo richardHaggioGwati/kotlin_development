@@ -1,5 +1,6 @@
 package com.graphsudokuopen.domain
 
+import java.util.*
 import java.io.Serializable
 import java.util.LinkedList
 import kotlin.collections.LinkedHashMap

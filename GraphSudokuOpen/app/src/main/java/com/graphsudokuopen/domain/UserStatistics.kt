@@ -1,5 +1,8 @@
 package com.graphsudokuopen.domain
 
+/**
+ * Storing time taken to complete any particular game in milliseconds
+ * */
 data class UserStatistics(
     val fourEasy: Long = 0,
     val fourMedium: Long = 0,
